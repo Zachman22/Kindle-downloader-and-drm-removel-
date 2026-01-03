@@ -1,0 +1,295 @@
+================================================================================
+    How to Download and Install Qt WebEngine
+================================================================================
+
+Qt WebEngine is REQUIRED for the Kindle DRM Converter to work.
+It's used to login to Amazon and download your Kindle books.
+
+================================================================================
+    METHOD 1: Using Qt Online Installer (RECOMMENDED)
+================================================================================
+
+STEP 1: Download Qt Installer
+------------------------------
+
+Go to: https://www.qt.io/download-qt-installer
+
+Click: "Download the Qt Online Installer"
+
+Choose your platform:
+- Windows: Qt Online Installer for Windows
+- Download: ~30 MB installer
+
+STEP 2: Run the Installer
+--------------------------
+
+1. Double-click the downloaded installer
+2. Sign in or create a free Qt account (required)
+3. Choose installation path (default: C:\Qt)
+
+STEP 3: Select Components (IMPORTANT!)
+---------------------------------------
+
+When you see "Select Components":
+
+✓ CHECK these items:
+
+    Qt 6.7.0 (or latest 6.x version)
+    ├── ✓ MinGW 11.2.0 64-bit
+    ├── ✓ Qt 5 Compatibility Module
+    ├── ✓ Additional Libraries
+    │   └── ✓ Qt WebEngine          ← MUST HAVE!
+    ├── ✓ Qt Debug Information Files
+    └── ✓ Sources (optional)
+
+    Developer and Designer Tools
+    ├── ✓ CMake 64-bit
+    ├── ✓ Ninja 64-bit
+    └── ✓ Qt Creator (IDE - optional but helpful)
+
+IMPORTANT: Make sure "Qt WebEngine" is CHECKED!
+
+STEP 4: Install
+---------------
+
+Click "Next" → "Install"
+
+This will download ~4-8 GB of files
+Installation takes 30-60 minutes depending on your internet speed
+
+WAIT for it to complete!
+
+STEP 5: Verify Installation
+----------------------------
+
+After installation, verify Qt WebEngine is installed:
+
+Open Command Prompt:
+
+    cd C:\Qt\6.7.0\mingw_64\lib\cmake
+    dir Qt6WebEngine
+
+You should see:
+    Qt6WebEngine
+    Qt6WebEngineCore
+    Qt6WebEngineWidgets
+
+If you see these folders, Qt WebEngine is installed! ✓
+
+================================================================================
+    METHOD 2: Add Qt WebEngine to Existing Installation
+================================================================================
+
+If you already have Qt installed but missing WebEngine:
+
+STEP 1: Run Qt Maintenance Tool
+--------------------------------
+
+Find and run:
+    C:\Qt\MaintenanceTool.exe
+
+STEP 2: Add Components
+-----------------------
+
+1. Click "Add or remove components"
+2. Sign in with your Qt account
+3. Navigate to your Qt version (e.g., Qt 6.7.0)
+4. Expand "Additional Libraries"
+5. ✓ CHECK "Qt WebEngine"
+6. Click "Next" → "Update"
+
+Wait for download and installation to complete.
+
+================================================================================
+    METHOD 3: Install via Command Line (Advanced)
+================================================================================
+
+If you prefer command line installation:
+
+1. Download Qt Installer Framework:
+   https://download.qt.io/official_releases/qt-installer-framework/
+
+2. Install Qt with WebEngine:
+
+    qt-unified-windows-x64-online.exe ^
+        --root C:\Qt ^
+        --accept-licenses ^
+        --default-answer ^
+        --confirm-command ^
+        install qt.qt6.670.win64_mingw ^
+        qt.qt6.670.addons.qtwebengine
+
+================================================================================
+    VERIFICATION - Check if Qt WebEngine is Installed
+================================================================================
+
+Run this in Command Prompt:
+
+    cd C:\Qt\6.7.0\mingw_64\bin
+    dir Qt6WebEngine*
+
+You should see these DLL files:
+    Qt6WebEngineCore.dll
+    Qt6WebEngineWidgets.dll
+    Qt6WebEngineQuick.dll
+
+If you see them: ✓ SUCCESS!
+
+Also check:
+
+    qmake -query QT_INSTALL_PREFIX
+
+Then verify:
+    dir "%QT_INSTALL_PREFIX%\lib\cmake\Qt6WebEngine"
+
+================================================================================
+    AFTER INSTALLING Qt WebEngine
+================================================================================
+
+Now you can build the Kindle DRM Converter:
+
+1. Add Qt to your PATH:
+
+    set PATH=%PATH%;C:\Qt\6.7.0\mingw_64\bin
+    set PATH=%PATH%;C:\Qt\Tools\mingw1120_64\bin
+    set PATH=%PATH%;C:\Qt\Tools\CMake_64\bin
+
+2. Navigate to project:
+
+    cd C:\path\to\Kindle-downloader-and-drm-removel-\qt-version
+
+3. Build:
+
+    build.bat
+
+   OR use the automated script:
+
+    start-here.bat
+
+================================================================================
+    TROUBLESHOOTING
+================================================================================
+
+Problem: "Qt WebEngine not found during build"
+-----------------------------------------------
+
+Solution 1: Set CMAKE_PREFIX_PATH
+    set CMAKE_PREFIX_PATH=C:\Qt\6.7.0\mingw_64
+    cmake ..
+
+Solution 2: Reinstall with Maintenance Tool
+    Run: C:\Qt\MaintenanceTool.exe
+    Add Qt WebEngine component
+
+Solution 3: Check installation path
+    dir C:\Qt\6.7.0\mingw_64\lib\cmake\Qt6WebEngine
+    If folder doesn't exist, WebEngine isn't installed
+
+
+Problem: "Cannot find Qt6WebEngineCore.dll"
+-------------------------------------------
+
+Solution: Add Qt bin to PATH
+    set PATH=%PATH%;C:\Qt\6.7.0\mingw_64\bin
+
+
+Problem: Qt Installer won't run
+--------------------------------
+
+Solution: Make sure you have:
+    - Windows 10 or later
+    - Administrator privileges
+    - Internet connection
+    - 15+ GB free disk space
+
+
+Problem: Download is too slow
+------------------------------
+
+Solution: Use a mirror server
+    In the installer, go to Settings
+    Change "Repository" to a closer mirror
+
+
+Problem: I have Qt 5 instead of Qt 6
+-------------------------------------
+
+Qt WebEngine works with both, but Qt 6 is recommended.
+
+For Qt 5.15:
+    - Install: qt.qt5.5150.win64_msvc2019_64
+    - And: qt.qt5.5150.qtwebengine
+
+================================================================================
+    SYSTEM REQUIREMENTS
+================================================================================
+
+For Qt 6 with WebEngine:
+
+- Windows 10 or later (64-bit)
+- 15 GB free disk space (for full Qt installation)
+- 4 GB RAM minimum (8 GB recommended)
+- Internet connection for download
+
+================================================================================
+    QUICK REFERENCE - Installation Sizes
+================================================================================
+
+Component               Size        Required?
+----------------------  ----------  ----------
+Qt 6 Base              ~2 GB       YES
+Qt WebEngine           ~500 MB     YES
+MinGW Compiler         ~1 GB       YES
+CMake                  ~100 MB     YES
+Qt Creator (IDE)       ~500 MB     Optional
+Qt Sources             ~1 GB       Optional
+Qt Documentation       ~500 MB     Optional
+
+Total (minimum):       ~4 GB
+Total (recommended):   ~6 GB
+
+================================================================================
+    ALTERNATIVE: Use Pre-built Qt WebEngine
+================================================================================
+
+If you're on Linux and want to avoid the full Qt installation:
+
+Ubuntu/Debian:
+    sudo apt-get install qt6-webengine-dev libqt6webenginewidgets6
+
+Fedora:
+    sudo dnf install qt6-qtwebengine-devel
+
+Arch Linux:
+    sudo pacman -S qt6-webengine
+
+macOS (Homebrew):
+    brew install qt@6
+
+Windows: Must use Qt Installer (no package manager option)
+
+================================================================================
+    NEXT STEPS AFTER INSTALLATION
+================================================================================
+
+1. ✓ Qt WebEngine installed
+2. → Set environment variables (PATH)
+3. → Run: start-here.bat
+4. → Build the application
+5. → Run your Kindle DRM Converter!
+
+================================================================================
+
+Need help? See:
+- BUILD_WINDOWS_EXE.md (complete build guide)
+- TROUBLESHOOTING_WINDOWS.md (common issues)
+- start-here.bat (automated build)
+
+================================================================================
+
+QUICK DOWNLOAD LINK:
+https://www.qt.io/download-qt-installer
+
+Make sure to CHECK "Qt WebEngine" during installation!
+
+================================================================================

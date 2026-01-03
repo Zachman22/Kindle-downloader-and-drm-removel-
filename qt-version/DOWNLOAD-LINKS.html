@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Qt WebEngine Download Links</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #41CD52;
+            border-bottom: 3px solid #41CD52;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 30px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #41CD52;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: background 0.3s;
+        }
+        .download-btn:hover {
+            background: #35A844;
+        }
+        .secondary-btn {
+            background: #0078D7;
+        }
+        .secondary-btn:hover {
+            background: #005A9E;
+        }
+        .info-box {
+            background: #E7F3FF;
+            border-left: 4px solid #0078D7;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: #FFF4E5;
+            border-left: 4px solid #FF8C00;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .success-box {
+            background: #E8F5E9;
+            border-left: 4px solid #41CD52;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        ul {
+            line-height: 1.8;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .step {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #41CD52;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📦 Download Qt WebEngine</h1>
+
+        <p><strong>Qt WebEngine is required</strong> to build the Kindle DRM Converter. It's used for Amazon login and downloading your Kindle books.</p>
+
+        <div class="warning-box">
+            <strong>⚠️ Important:</strong> During Qt installation, you MUST check the "Qt WebEngine" component under "Additional Libraries"!
+        </div>
+
+        <h2>🚀 Quick Download</h2>
+
+        <a href="https://www.qt.io/download-qt-installer" class="download-btn" target="_blank">
+            ⬇️ Download Qt Online Installer
+        </a>
+
+        <div class="info-box">
+            <strong>File:</strong> Qt Online Installer for Windows (~30 MB)<br>
+            <strong>Full Installation Size:</strong> ~4-6 GB<br>
+            <strong>Installation Time:</strong> 30-60 minutes
+        </div>
+
+        <h2>📋 Installation Steps</h2>
+
+        <div class="step">
+            <strong>Step 1:</strong> Download and run the Qt Online Installer (link above)
+        </div>
+
+        <div class="step">
+            <strong>Step 2:</strong> Create or sign in to your Qt account (free)
+        </div>
+
+        <div class="step">
+            <strong>Step 3:</strong> When selecting components, CHECK these:
+            <ul>
+                <li>✅ Qt 6.7.0 (or latest 6.x version)</li>
+                <li>✅ MinGW 11.2.0 64-bit</li>
+                <li>✅ <strong>Additional Libraries → Qt WebEngine</strong> ⚠️ MUST HAVE!</li>
+                <li>✅ CMake 64-bit</li>
+                <li>✅ Qt Creator (optional but recommended)</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <strong>Step 4:</strong> Click Install and wait for completion (30-60 min)
+        </div>
+
+        <div class="step">
+            <strong>Step 5:</strong> After installation, verify Qt WebEngine is installed:
+            <ul>
+                <li>Check folder exists: <code>C:\Qt\6.7.0\mingw_64\lib\cmake\Qt6WebEngine</code></li>
+                <li>Or run: <code>check-qt-webengine.bat</code></li>
+            </ul>
+        </div>
+
+        <h2>🔧 Alternative Downloads</h2>
+
+        <a href="https://cmake.org/download/" class="download-btn secondary-btn" target="_blank">
+            📥 Download CMake
+        </a>
+
+        <a href="https://calibre-ebook.com/download" class="download-btn secondary-btn" target="_blank">
+            📚 Download Calibre
+        </a>
+
+        <div class="info-box">
+            You also need <strong>Calibre</strong> for ebook conversion. Download it from the link above.
+        </div>
+
+        <h2>✅ After Installation</h2>
+
+        <div class="success-box">
+            Once Qt (with WebEngine) is installed:
+            <ol>
+                <li>Open Command Prompt</li>
+                <li>Navigate to: <code>qt-version</code> folder</li>
+                <li>Run: <code>start-here.bat</code></li>
+                <li>Follow the automated build process</li>
+            </ol>
+        </div>
+
+        <h2>🆘 Need Help?</h2>
+
+        <p>If you already have Qt installed but missing WebEngine:</p>
+        <ol>
+            <li>Run: <code>C:\Qt\MaintenanceTool.exe</code></li>
+            <li>Select "Add or remove components"</li>
+            <li>Navigate to Qt → Additional Libraries</li>
+            <li>Check "Qt WebEngine"</li>
+            <li>Click Update</li>
+        </ol>
+
+        <h2>📚 Documentation</h2>
+
+        <p>See these files in the <code>qt-version</code> folder:</p>
+        <ul>
+            <li><code>INSTALL_QT_WEBENGINE.txt</code> - Detailed installation guide</li>
+            <li><code>check-qt-webengine.bat</code> - Check if WebEngine is installed</li>
+            <li><code>start-here.bat</code> - Automated build script</li>
+            <li><code>BUILD_WINDOWS_EXE.md</code> - Complete build documentation</li>
+        </ul>
+
+        <hr style="margin: 30px 0;">
+
+        <div class="info-box">
+            <strong>📖 Repository:</strong>
+            <a href="https://github.com/Zachman22/Kindle-downloader-and-drm-removel-" target="_blank">
+                https://github.com/Zachman22/Kindle-downloader-and-drm-removel-
+            </a>
+        </div>
+
+        <p style="text-align: center; color: #666; margin-top: 30px;">
+            Made with Qt Framework ❤️
+        </p>
+    </div>
+</body>
+</html>
