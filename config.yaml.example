@@ -1,0 +1,62 @@
+# Kindle DRM Converter Configuration
+# Copy this file to config.yaml and fill in your details
+
+# Amazon Kindle Account Settings
+amazon:
+  # Your Amazon account email
+  email: "your-email@example.com"
+
+  # Your Amazon account password
+  password: "your-password"
+
+  # Amazon region/marketplace
+  # Options: US, UK, DE, FR, ES, IT, JP, CA, AU
+  region: "US"
+
+# Directory Configuration
+directories:
+  # Where to download Kindle books
+  download: "./downloads"
+
+  # Where to save converted books
+  output: "./output"
+
+  # Temporary directory for processing
+  temp: "./temp"
+
+# DRM Removal Settings
+drm:
+  # Your Kindle device serial number (optional, but recommended)
+  # You can find this in your Kindle device settings or on Amazon's "Manage Your Content and Devices" page
+  # Example: "B012345678901234"
+  kindle_serial: ""
+
+  # Your Kindle PID (optional)
+  # This is an alternative to the serial number
+  # Example: "ABCD1234"
+  pid: ""
+
+# Conversion Settings
+conversion:
+  # List of output formats to convert to
+  # Supported formats: epub, pdf, mobi, azw3, txt, html, rtf, odt, docx, fb2, lit, lrf, pdb, pml, rb, snb, tcr
+  formats:
+    - epub
+    - pdf
+    - mobi
+    - azw3
+    - txt
+
+  # Conversion quality
+  # Options: high, medium, low
+  quality: high
+
+  # Additional conversion options (optional)
+  # Uncomment and customize as needed
+  # pdf:
+  #   paper_size: "letter"  # Options: letter, a4, a5, etc.
+  #   page_numbers: true
+  # epub:
+  #   version: 3  # EPUB version (2 or 3)
+  # txt:
+  #   formatting: "markdown"  # Options: plain, markdown

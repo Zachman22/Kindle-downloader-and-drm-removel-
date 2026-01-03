@@ -1,0 +1,26 @@
+# Core dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+selenium>=4.15.0
+PyYAML>=6.0.1
+
+# Cryptography for DRM removal
+cryptography>=41.0.0
+pycryptodome>=3.19.0
+
+# Ebook handling
+ebooklib>=0.18
+lxml>=4.9.0
+Pillow>=10.1.0
+
+# Web driver manager for Selenium
+webdriver-manager>=4.0.0
+
+# Additional utilities
+tqdm>=4.66.0
+colorama>=0.4.6
+
+# Note: Calibre must be installed separately
+# Linux: sudo apt-get install calibre
+# macOS: brew install calibre
+# Windows: Download from calibre-ebook.com
