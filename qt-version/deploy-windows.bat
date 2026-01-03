@@ -10,6 +10,12 @@ echo.
 REM Check if build exists
 if not exist "build-Release\bin\KindleDRMConverter.exe" (
     echo [ERROR] Build not found. Please run build.bat first.
+    echo.
+    echo Current directory: %CD%
+    echo.
+    echo Looking for: build-Release\bin\KindleDRMConverter.exe
+    echo.
+    pause
     exit /b 1
 )
 
