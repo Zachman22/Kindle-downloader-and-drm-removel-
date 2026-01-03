@@ -11,6 +11,13 @@ A high-performance C++ implementation using the Qt Framework to download Kindle 
 - **Multi-Format Conversion**: Convert to EPUB, PDF, MOBI, AZW3, TXT, HTML, RTF, ODT, DOCX, and more
 - **Qt Cryptography**: Built-in encryption/decryption support
 - **Asynchronous Operations**: Non-blocking I/O with Qt's signal/slot mechanism
+- **Windows EXE**: Standalone executable with installer support
+
+## 🚀 Quick Start - Windows Users
+
+**Want the Windows EXE?** See [WINDOWS_QUICKSTART.md](WINDOWS_QUICKSTART.md)
+
+**Building Windows EXE?** See [BUILD_WINDOWS_EXE.md](BUILD_WINDOWS_EXE.md)
 
 ## Prerequisites
 

@@ -46,8 +46,19 @@ set(HEADERS
     src/EbookConverter.h
 )
 
+# Windows-specific configuration
+if(WIN32)
+    # Include Windows build config
+    include(build-windows.cmake)
+endif()
+
 # Create executable
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+
+# Set output directory
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+)
 
 # Link Qt libraries
 if(Qt6_FOUND)
